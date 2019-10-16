@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="npay-configuration-handler:war exploded2">
+    <output-path>$PROJECT_DIR$/out/artifacts/npay_configuration_handler_war_exploded2</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="npay-configuration-handler/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="npay-configuration-handler" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

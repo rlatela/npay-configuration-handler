@@ -1,0 +1,27 @@
+<configuration>
+    <appender name="CLOUD" class="com.google.cloud.logging.logback.LoggingAppender">
+        <!-- Optional : filter logs at or above a level -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <log>application.log</log> <!-- Optional : default java.log -->
+        <!-- Optional : will use the default credentials of the environment if this property is not set -->
+        <credentialsFile>${npay.configuration.secure.google-json-key}</credentialsFile>
+        <enhancer>com.example.enhancers.TestLoggingEnhancer</enhancer> <!-- Optional -->
+        <enhancer>com.example.enhancers.AnotherEnhancer</enhancer> <!-- Optional -->
+        <flushLevel>WARN</flushLevel> <!-- Optional : default ERROR -->
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+      <!--  <appender-ref ref="CLOUD" /> -->
+    </root>
+</configuration>
